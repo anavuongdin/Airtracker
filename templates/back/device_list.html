@@ -1,0 +1,68 @@
+{% extends "back/base.html" %}
+
+{% load static %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Device list' %}{% endblock %}
+
+{% block website_name %}{% trans 'Device list' %}
+    <!--<a class="btn btn-primary" href='{% url "export" "device" %}?format=json' role="button">{% trans 'Export JSON' %}</a>-->
+    <!--<a class="btn btn-success" href='{% url "export" "device" %}?format=xml' role="button">{% trans 'Export XML' %}</a>-->
+{% endblock %}
+
+{% block content %}
+
+{% if msg_ok %}
+    <div class="alert alert-info" role="alert">
+        <strong>{{ msg_ok }}</strong>
+    </div>
+{% endif %}
+
+{% if msg_err %}
+    <div class="alert alert-warning" role="alert">
+        <strong>{{ msg_err }}</strong>
+    </div>
+{% endif %}
+
+<div class="col-xs-12 col-sm-12 placeholder">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{% trans 'Id' %}</th>
+                <th>{% trans 'IP address' %}</th>
+                <th>{% trans 'Name' %}</th>
+                <th>{% trans 'Date creation' %}</th>
+                <th>{% trans 'Description' %}</th>
+                <th>{% trans 'Active?' %}</th>
+                <th>{% trans 'Update' %}</th>
+                <th>{% trans 'Delete' %}</th>
+                <th>{% trans 'View data chart' %}</th>
+<!--                <th>{% trans 'Disable/Enable' %}</th>-->
+<!--                <th>{% trans 'Accelerate data rate' %}</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in list %}
+            <tr>
+                <td>#{{ i.id }}</td>
+                <td><a class="tooltip-viewport-bottom" title="{{ i.remote_address }}">{{ i.remote_address | truncatechars:15 }}</a></td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.pub_date }}</td>
+                <td>{{ i.description | truncatechars:20 }}</td>
+                <td>{{ i.enable }}</td>
+                <td><a class="btn btn-primary" href="{% url 'device_edit' i.id %}" role="button">{% trans 'Update' %}</a></td>
+                <td><a class="btn btn-danger" href="{% url 'device_delete' i.id %}" role="button" onclick="return confirm('{% trans 'Are you sure to delete this device?' %}');">{% trans 'Delete' %}</a></td>
+                <td><a class="btn btn-info" href="{% url 'data_chart' i.id %}" role="button">{% trans 'View chart' %}</a></td>
+<!--                <td><a class="btn btn-default" href="{% url 'data_chart' i.id %}" role="button">{% trans 'Enable/Disable' %}</a></td>-->
+<!--                <td><a class="btn btn-success" href="{% url 'data_chart' i.id %}" role="button">{% trans 'Accelerate data rate' %}</a></td>-->
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

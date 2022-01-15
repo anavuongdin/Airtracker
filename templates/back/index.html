@@ -1,0 +1,42 @@
+{% extends "back/base.html" %}
+
+{% load static %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'AirTracker' %}{% endblock %}
+
+{% block website_name %}{% website_name %}{% endblock %}
+
+{% block content %}
+<div class="row placeholders">
+    <div class="col-xs-6 col-sm-4 placeholder">
+        <a href="{% url 'device_add' %}">
+        <img src="{% static "back/dashboard/img/add.png" %}" width="200" height="200" class="img-responsive"
+             alt="{% trans 'Device Management' %}">
+        <h4>{% trans 'Add device' %}</h4></a>
+        <span class="text-muted">{% trans 'Add a device and get a API key' %}</span>
+    </div>
+    <div class="col-xs-6 col-sm-4 placeholder">
+        <a href="{% url 'device_list' %}">
+        <img src="{% static "back/dashboard/img/device.png" %}" width="200" height="200" class="img-responsive"
+             alt="{% trans 'Device list' %}">
+        <h4>{% trans 'Device management' %}</h4></a>
+        <span class="text-muted">{% trans 'Headquarter of system' %}</span>
+    </div>
+    <div class="col-xs-6 col-sm-4 placeholder">
+        <a href="{% url 'datas' %}">
+        <img src="{% static "back/dashboard/img/data.png" %}" width="200" height="200" class="img-responsive"
+             alt="{% trans 'IoT Data' %}">
+        <h4>{% trans 'Data' %}</h4></a>
+        <span class="text-muted">{% trans 'View detailed data, JSON, XML, CSV' %}</span>
+    </div>
+<!--    <div class="col-xs-6 col-sm-3 placeholder">-->
+<!--        <a href="{% url 'key_list' %}">-->
+<!--        <img src="{% static "back/dashboard/img/key-256.png" %}" width="200" height="200" class="img-responsive"-->
+<!--             alt="{% trans 'api key' %}">-->
+<!--        <h4>{% trans 'Key Yönetici' %}</h4></a>-->
+<!--        <span class="text-muted">{% trans 'Yeni Key Üret' %}</span>-->
+<!--    </div>-->
+</div>
+{% endblock %}

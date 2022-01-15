@@ -1,0 +1,7 @@
+# USERNAME_CLOUD = "iot_test"
+# PASSWORD_CLOUD = "IoT123456"
+USERNAME_CLOUD = ""
+PASSWORD_CLOUD = ""
+DOMAIN_CLOUD = "broker.mqttdashboard.com"
+PORT_CLOUD = 1883
+TOPIC = "YourTopic/A/B/C"

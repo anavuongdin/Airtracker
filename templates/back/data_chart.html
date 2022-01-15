@@ -1,0 +1,346 @@
+{% extends 'back/base.html' %}
+
+{% load static %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block website_name %}{% trans 'Data chart' %}
+  <a class="btn btn-primary" href='{% url "data_chart" device.pk %}' role="button">{% trans 'Refresh' %}</a>
+{% endblock %}
+
+{% block content %}
+    <div class="col-xs-4 col-sm-2 placeholder">
+        <a href="#co">
+        <img src="{% static "back/chart/img/co.png" %}" width="75" height="75" class="img-responsive"
+             alt="{% trans 'Carbon monoxide' %}">
+        <h4>{% trans 'Carbon monoxide' %}</h4></a>
+    </div>
+    <div class="col-xs-4 col-sm-2 placeholder">
+        <a href="#co2">
+        <img src="{% static "back/chart/img/co2.png" %}" width="75" height="75" class="img-responsive"
+             alt="{% trans 'Carbon dioxide' %}">
+        <h4>{% trans 'Carbon dioxide' %}</h4></a>
+    </div>
+    <div class="col-xs-4 col-sm-2 placeholder">
+        <a href="#acetona">
+        <img src="{% static "back/chart/img/acetona.jpg" %}" width="75" height="75" class="img-responsive"
+             alt="{% trans 'Acetona' %}">
+        <h4>{% trans 'Acetona' %}</h4></a>
+    </div>
+    <div class="col-xs-4 col-sm-2 placeholder">
+        <a href="#nh4">
+        <img src="{% static "back/chart/img/nh4.png" %}" width="75" height="75" class="img-responsive"
+             alt="{% trans 'Methane' %}">
+        <h4>{% trans 'Methane' %}</h4></a>
+    </div>
+    <div class="col-xs-4 col-sm-2 placeholder">
+        <a href="#alcohol">
+        <img src="{% static "back/chart/img/alcohol.jpg" %}" width="75" height="75" class="img-responsive"
+             alt="{% trans 'Alcohol' %}">
+        <h4>{% trans 'Alcohol' %}</h4></a>
+    </div>
+    <div class="col-xs-4 col-sm-2 placeholder">
+        <a href="#tolueno">
+        <img src="{% static "back/chart/img/tolueno.png" %}" width="75" height="75" class="img-responsive"
+             alt="{% trans 'Tolueno' %}">
+        <h4>{% trans 'Tolueno' %}</h4></a>
+    </div>
+
+  <a id="co">
+    <div id="container" style="width: 95%;">
+      <canvas id="chart1" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+    </div>
+  </a>
+
+  <a id="co2">
+    <div id="container2" style="width: 95%;">
+      <canvas id="chart2" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+    </div>
+  </a>
+
+    <a id="acetona">
+    <div id="container3" style="width: 95%;">
+      <canvas id="chart3" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+    </div>
+  </a>
+
+    <a id="nh4">
+    <div id="container4" style="width: 95%;">
+      <canvas id="chart4" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+    </div>
+  </a>
+
+    <a id="alcohol">
+    <div id="container5" style="width: 95%;">
+      <canvas id="chart5" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+    </div>
+  </a>
+
+    <a id="tolueno">
+    <div id="container6" style="width: 95%;">
+      <canvas id="chart6" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+    </div>
+  </a>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $dataChart = $("#chart1");
+      $.ajax({
+        url: $dataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $dataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'CO gas',
+                borderColor: '#17a2b8',
+                data: data.data_1
+              }]
+            },
+            options: {
+              responsive: true,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'CO gas chart'
+              },
+              bezierCurve: false,
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $dataChart2 = $("#chart2");
+      $.ajax({
+        url: $dataChart2.data("url"),
+        success: function (data) {
+
+          var ctx = $dataChart2[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.labels,
+              datasets: [
+              {
+                label: 'CO2',
+                borderColor: 'RED',
+                data: data.data_2
+              }]
+            },
+            options: {
+              responsive: true,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'CO2 gas chart'
+              },
+              bezierCurve: false,
+            }
+          });
+        }
+      });
+    });
+  </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $dataChart = $("#chart3");
+      $.ajax({
+        url: $dataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $dataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'Acetona gas',
+                borderColor: 'LIME',
+                data: data.data_3
+              }]
+            },
+            options: {
+              responsive: true,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Acetona gas chart'
+              },
+              bezierCurve: false,
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $dataChart = $("#chart4");
+      $.ajax({
+        url: $dataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $dataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'NH4 gas',
+                borderColor: 'BLACK',
+                data: data.data_4
+              }]
+            },
+            options: {
+              responsive: true,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'NH4 gas chart'
+              },
+              bezierCurve: false,
+            }
+          });
+        }
+      });
+    });
+  </script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $dataChart = $("#chart5");
+      $.ajax({
+        url: $dataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $dataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'Alcohol gas',
+                borderColor: 'YELLOW',
+                data: data.data_5
+              }]
+            },
+            options: {
+              responsive: true,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Alcohol gas chart'
+              },
+              bezierCurve: false,
+            }
+          });
+        }
+      });
+    });
+  </script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $dataChart = $("#chart6");
+      $.ajax({
+        url: $dataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $dataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'Tolueno gas',
+                borderColor: 'PINK',
+                data: data.data_6
+              }]
+            },
+            options: {
+              responsive: true,
+              interaction: {
+                mode: 'index',
+                intersect: false,
+              },
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Tolueno gas chart'
+              },
+              bezierCurve: false,
+            }
+          });
+        }
+      });
+    });
+  </script>
+{% endblock %}

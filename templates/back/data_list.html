@@ -1,0 +1,81 @@
+{% extends "back/base.html" %}
+
+{% load static %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Data' %}{% endblock %}
+
+{% block website_name %}{% trans 'Data' %}
+    <a class="btn btn-primary" href='{% url "export" "data" %}?format=json' role="button">{% trans 'Export JSON' %}</a>
+    <a class="btn btn-success" href='{% url "export" "data" %}?format=xml' role="button">{% trans 'Export XML' %}</a>
+    <a class="btn btn-danger" href='{% url "export" "data" %}?format=csv' role="button">{% trans 'Export CSV' %}</a>
+    <a class="btn btn-info" href="/api/datas/?last=True" role="button">{% trans 'Create data' %}</a>
+{% endblock %}
+
+{% block content %}
+
+{% if msg_ok %}
+    <div class="alert alert-info" role="alert">
+        <strong>{{ msg_ok }}</strong>
+    </div>
+{% endif %}
+
+{% if msg_err %}
+    <div class="alert alert-warning" role="alert">
+        <strong>{{ msg_err }}</strong>
+    </div>
+{% endif %}
+
+<div class="col-xs-12 col-sm-12 placeholder">
+    <div class="table-responsive">
+        <table class="table table-responsive">
+            <thead>
+            <tr>
+                <th>{% trans 'Id' %}</th>
+                <th>{% trans 'Device' %}</th>
+                <th>{% trans 'IP Address' %}</th>
+                <th>{% trans 'CO' %}</th>
+                <th>{% trans 'CO2' %}</th>
+                <th>{% trans 'Acetona' %}</th>
+                <th>{% trans 'Methane' %}</th>
+                <th>{% trans 'Alcohol' %}</th>
+                <th>{% trans 'Tolueno' %}</th>
+<!--                <th>{% trans 'Field 7' %}</th>-->
+<!--                <th>{% trans 'Field 8' %}</th>-->
+<!--                <th>{% trans 'Field 9' %}</th>-->
+<!--                <th>{% trans 'Field 10' %}</th>-->
+                <th>{% trans 'Date' %}</th>
+<!--                <th>{% trans 'GET ID' %}</th>-->
+<!--                <th>{% trans 'GET Last' %}</th>-->
+<!--                <th>{% trans 'View chart' %}</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in datas %}
+            <tr>
+                <td>#{{ i.id }}</td>
+                <td>{{ i.device.name }}</td>
+                <td><a class="tooltip-viewport-bottom" title="{{ i.remote_address }}">{{ i.remote_address | truncatechars:15 }}</a></td>
+                <td>{% if i.field_1 %}<!--{{ i.device.field_1 }} /--> {{ i.field_1 }}{% endif %}</td>
+                <td>{% if i.field_2 %}<!--{{ i.device.field_2 }} /--> {{ i.field_2 }}{% endif %}</td>
+                <td>{% if i.field_3 %}<!--{{ i.device.field_3 }} /--> {{ i.field_3 }}{% endif %}</td>
+                <td>{% if i.field_4 %}<!--{{ i.device.field_4 }} /--> {{ i.field_4 }}{% endif %}</td>
+                <td>{% if i.field_5 %}<!--{{ i.device.field_5 }} /--> {{ i.field_5 }}{% endif %}</td>
+                <td>{% if i.field_6 %}<!--{{ i.device.field_6 }} /--> {{ i.field_6 }}{% endif %}</td>
+<!--                <td>{% if i.field_7 %}{{ i.device.field_7 }} / {{ i.field_7 }}{% endif %}</td>-->
+<!--                <td>{% if i.field_8 %}{{ i.device.field_8 }} / {{ i.field_8 }}{% endif %}</td>-->
+<!--                <td>{% if i.field_9 %}{{ i.device.field_9 }} / {{ i.field_9 }}{% endif %}</td>-->
+<!--                <td>{% if i.field_10 %}{{ i.device.field_10 }} / {{ i.field_10 }}{% endif %}</td>-->
+                <td>{{ i.pub_date }}</td>
+<!--                <td><a class="btn btn-dark" href="/api/datas/{{ i.pk }}/" role="button">{% trans 'GET ID' %}</a></td>-->
+<!--                <td><a class="btn btn-success" href="/api/datas/?last=True" role="button">{% trans 'GET Last' %}</a></td>-->
+<!--                <td><a class="btn btn-info" href="{% url 'data_chart' i.device.pk %}" role="button">{% trans 'View chart' %}</a></td>-->
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
