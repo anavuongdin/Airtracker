@@ -90,7 +90,7 @@ AUTH_PASSWORD_VALIDATORS = [
 _ = lambda s: s
 
 LANGUAGES = [
-  ('tr', _('Turkish')),
+  # ('tr', _('Turkish')),
   ('en', _('English')),
 ]
 
@@ -98,7 +98,7 @@ LOCALE_PATHS = (
                 os.path.join(BASE_DIR, 'locale'),
 )
 
-LANGUAGE_CODE = 'tr'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
