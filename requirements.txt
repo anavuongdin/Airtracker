@@ -6,3 +6,4 @@ sphinx
 whitenoise
 paho-mqtt
 django-background-tasks
+GitPython
