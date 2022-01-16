@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="44b51eaf-66cf-4ea3-b09a-6318f1ff34b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iotdashboard_db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard_db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,10 +121,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Server">
+  <component name="RunManager" selected="Python.git_management">
     <configuration name="Data" type="PythonConfigurationType" factoryName="Python">
       <module name="iot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,7 +132,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\PHAM DIEP LOAN\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="SDK_HOME" value="E:\University\Fourth Year\First Semester\IoT\Project\airtracker\Airtracker\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -152,7 +153,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\PHAM DIEP LOAN\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="SDK_HOME" value="E:\University\Fourth Year\First Semester\IoT\Project\airtracker\Airtracker\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
