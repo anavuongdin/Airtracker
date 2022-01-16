@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="44b51eaf-66cf-4ea3-b09a-6318f1ff34b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iotdashboard_db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard_db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
