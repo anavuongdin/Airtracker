@@ -138,7 +138,7 @@ def generate_key(request, id=None):
     val.api_key = val.generate_key()
     val.save()
     list = Device.objects.filter(enable=True)
-    msg_ok = _(u'Key üretildi')
+    msg_ok = _(u'Successfully generated an API key')
 
     return HttpResponseRedirect(reverse('key_list'), locals())
 
