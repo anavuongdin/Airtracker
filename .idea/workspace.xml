@@ -117,7 +117,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Data">
+  <component name="RunManager" selected="Python.git_management">
     <configuration name="Data" type="PythonConfigurationType" factoryName="Python">
       <module name="iot" />
       <option name="INTERPRETER_OPTIONS" value="" />
