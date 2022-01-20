@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="44b51eaf-66cf-4ea3-b09a-6318f1ff34b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/datas/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devices/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devices/templatetags/custom_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/templatetags/custom_tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devices/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iotdashboard/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard/debug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iotdashboard/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devices/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iotdashboard_db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard_db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +89,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Data">
+  <component name="RunManager" selected="Python.Server">
     <configuration name="Data" type="PythonConfigurationType" factoryName="Python">
       <module name="iot" />
       <option name="INTERPRETER_OPTIONS" value="" />
