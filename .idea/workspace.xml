@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44b51eaf-66cf-4ea3-b09a-6318f1ff34b5" name="Default Changelist" comment="" />
+    <list default="true" id="44b51eaf-66cf-4ea3-b09a-6318f1ff34b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datas/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/datas/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devices/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devices/templatetags/custom_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/templatetags/custom_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devices/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iotdashboard/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard/debug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iotdashboard/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iotdashboard_db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/iotdashboard_db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +94,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.git_management">
+  <component name="RunManager" selected="Python.Data">
     <configuration name="Data" type="PythonConfigurationType" factoryName="Python">
       <module name="iot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,6 +109,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="process_tasks" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Server" type="PythonConfigurationType" factoryName="Python">
+      <module name="iot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="E:\University\Fourth Year\First Semester\IoT\Project\airtracker\Airtracker\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -130,6 +160,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.Data" />
+      <item itemvalue="Python.Server" />
       <item itemvalue="Python.git_management" />
     </list>
     <recent_temporary>
@@ -138,7 +169,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

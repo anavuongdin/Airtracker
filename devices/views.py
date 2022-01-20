@@ -9,13 +9,11 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-from django.http import JsonResponse
 
 from devices.forms import DeviceForm
 from devices.models import Device
 from iotdashboard.settings import LOGIN_URL
-from datas.models import Data
+
 from util.HiveMQ import PublicClient
 
 
